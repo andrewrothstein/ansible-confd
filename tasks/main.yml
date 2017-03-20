@@ -4,13 +4,13 @@
   become_user: root
   get_url:
     url: '{{confd_url}}'
-    dest: /usr/local/bin/{{confd_name}}
+    dest: '{{confd_install_dir}}/{{confd_name}}'
     mode: 0755
 
 - name: link confd
   become: yes
   become_user: root
   file:
-    src: /usr/local/bin/{{confd_name}}
-    dest: /usr/local/bin/confd
+    src: '{{confd_install_dir}}/{{confd_name}}'
+    dest: '{{confd_install_dir}}/confd'
     state: link

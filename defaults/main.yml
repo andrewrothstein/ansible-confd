@@ -2,3 +2,4 @@
 confd_version : '0.11.0'
 confd_platform : linux-amd64
 confd_mirror : https://github.com/kelseyhightower/confd/releases/download
+confd_install_dir: /usr/local/bin

@@ -1,7 +1,7 @@
 andrewrothstein.confd
 ===========================
 
-A role for installing [confd](https://github.com/kelseyhightower/confd).
+Installs [confd](https://github.com/kelseyhightower/confd)
 
 Requirements
 ------------
