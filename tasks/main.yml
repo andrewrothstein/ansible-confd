@@ -1,17 +1,16 @@
 ---
 - name: download confd
-  get_url: >
-    url={{confd_url}}
-    dest=/usr/local/bin/{{confd_name}}
-    owner=root
-    group=root
-    mode=0755
+  become: yes
+  become_user: root
+  get_url:
+    url: '{{confd_url}}'
+    dest: /usr/local/bin/{{confd_name}}
+    mode: 0755
 
 - name: link confd
-  file: >
-    src=/usr/local/bin/{{ confd_name }}
-    dest=/usr/local/bin/confd
-    state=link
-    force=yes
-    owner=root
-    group=root
+  become: yes
+  become_user: root
+  file:
+    src: /usr/local/bin/{{confd_name}}
+    dest: /usr/local/bin/confd
+    state: link
