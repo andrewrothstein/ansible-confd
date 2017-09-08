@@ -1,5 +1,10 @@
 ---
-confd_version : '0.11.0'
+confd_version : '0.13.0'
 confd_platform : linux-amd64
+confd_checksums:
+  darwin-amd64: sha256:4d17e0512bb2426de890f5518b05acaafa775f33baf17da84122bba841b050bb
+  linux-amd64: sha256:dbcdfcb1466439f1c2f9f1d42e1f315aa40b7348e620a7ada6256ce81a11890b
+  windows-amd64: sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+
 confd_mirror : https://github.com/kelseyhightower/confd/releases/download
 confd_install_dir: /usr/local/bin

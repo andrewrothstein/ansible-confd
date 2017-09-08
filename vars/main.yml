@@ -1,3 +1,4 @@
 ---
 confd_name : confd-{{confd_version}}-{{confd_platform}}
 confd_url : '{{confd_mirror}}/v{{confd_version}}/{{confd_name}}'
+confd_checksum: '{{confd_checksums[confd_platform]}}'
