@@ -5,6 +5,7 @@
   get_url:
     url: '{{confd_url}}'
     dest: '{{confd_install_dir}}/{{confd_name}}'
+    checksum: '{{confd_checksum}}'
     mode: 0755
 
 - name: link confd
