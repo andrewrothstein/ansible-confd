@@ -3,15 +3,15 @@
   become: yes
   become_user: root
   get_url:
-    url: '{{confd_url}}'
-    dest: '{{confd_install_dir}}/{{confd_name}}'
-    checksum: '{{confd_checksum}}'
+    url: '{{ confd_url }}'
+    dest: '{{ confd_install_dir }}/{{ confd_name }}'
+    checksum: '{{ confd_checksum }}'
     mode: 0755
 
 - name: link confd
   become: yes
   become_user: root
   file:
-    src: '{{confd_install_dir}}/{{confd_name}}'
-    dest: '{{confd_install_dir}}/{{confd_bin_name}}'
+    src: '{{ confd_install_dir }}/{{ confd_name }}'
+    dest: '{{ confd_install_dir }}/{{ confd_bin_name }}'
     state: link
