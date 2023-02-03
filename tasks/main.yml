@@ -1,17 +1,17 @@
 ---
-- name: download confd
-  become: yes
+- name: downloading {{ confd_url }} to {{ confd_exe }}
+  become: true
   become_user: root
   get_url:
     url: '{{ confd_url }}'
-    dest: '{{ confd_install_dir }}/{{ confd_name }}'
+    dest: '{{ confd_exe }}'
     checksum: '{{ confd_checksum }}'
     mode: 0755
 
-- name: link confd
-  become: yes
+- name: linking confd {{ confd_link }} to {{ confd_exe }}
+  become: true
   become_user: root
   file:
-    src: '{{ confd_install_dir }}/{{ confd_name }}'
-    dest: '{{ confd_install_dir }}/{{ confd_bin_name }}'
+    src: '{{ confd_exe }}'
+    dest: '{{ confd_link }}'
     state: link

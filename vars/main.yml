@@ -1,5 +1,9 @@
 ---
-confd_name: confd-{{confd_version}}-{{confd_platform}}{{confd_bin_suffix|default("")}}
-confd_bin_name: confd{{confd_bin_suffix|default("")}}
-confd_url: '{{confd_mirror}}/v{{confd_version}}/{{confd_name}}{{confd_bin_suffix|default("")}}'
-confd_checksum: '{{confd_checksums[confd_version][confd_platform]}}'
+confd_os: '{{ ansible_system | lower }}'
+confd_arch: '{{ confd_arch_map[ansible_architecture] }}'
+confd_platform: '{{ confd_os }}-{{ confd_arch }}'
+confd_name: confd-{{ confd_version }}-{{ confd_platform }}{{ confd_dotexe | default("") }}
+confd_url: '{{ confd_mirror }}/v{{ confd_version }}/{{ confd_name }}'
+confd_checksum: '{{ confd_checksums[confd_version][confd_platform] }}'
+confd_exe: '{{ confd_install_dir }}/{{ confd_name }}'
+confd_link: '{{ confd_install_dir }}/confd{{ confd_dotexe | default("") }}'

@@ -1,4 +1,10 @@
 ---
 - hosts: all
   roles:
-    - role: '{{playbook_dir}}'
+    - role: '{{ playbook_dir }}'
+  tasks:
+    - command: /usr/local/bin/confd --version
+      register: confd_test_output
+    - name: confd --version
+      debug:
+        msg: '{{ confd_test_output.stdout }}'
